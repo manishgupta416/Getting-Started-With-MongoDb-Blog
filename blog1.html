@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDb</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Getting Started with Mongodb</h1>
+    <p><strong>MongoDb:</strong>
+        <ul>
+            <li>MongoDb is a document database designed for ease of development and scaling</li>
+            <li>It is intitutive and easy to use NOSQL database</li>
+            <li>It is available as community and enterprise edition</li>
+        </ul>
+    </p>
+
+    <p><strong>Mongo Vs Mongod</strong>
+        <p><strong>Mongo:</strong>
+         <ul>  
+            <li><strong>Mongo</strong> is the command-line shell that connects to a specific instance of mongod</li>
+            <li>In Mongo we give only command/instruction to perform tasks and In actual mongod perform those tasks</li>
+        </ul>
+
+        <p><strong>Mongod:</strong>
+        <ul>
+            <li><strong>Mongod</strong> is the "mongo Daemon " its basically host process for the database</li>
+            <li>Think Mongod is like a compiler</li>
+            <li>It is actual process which perform work to store data in database</li>
+            
+        </ul>
+
+        <h3>Comparison of mongodb with mysql :</h3>
+        <pre>
+       SQL Terms           MongoDb Terms
+
+       Database------------Database
+
+       Tables--------------Collections
+
+       Rows----------------Documents(BSON)
+
+       Columns-------------Fields
+        </pre>
+
+        <p><strong>Some Key Points : </strong></p>
+        <ul>
+            <li><strong>Collection :</strong> Collections is like a JavaScript Objects</li>
+            <li><strong>Document :</strong> Document is one unit of data inside collections</li>
+            <li>Internally It uses BSON which is much similar like JSON </li>
+            <li>Also BSON is more efficient than JSON</li>
+        </ul>
+    </p>
+
+    <h3>Download Steps:</h3>
+    <ul>
+        <li>Search Install mongod</li>
+        <li>Click on Install MongoDB Community Edition because Its free to use <a href="https://docs.mongodb.com/manual/administration/install-community/#install-mongodb-community-edition">Click</a></li>
+        <li>Click on  Install on windows</li>
+        <li>Scroll and Click on MongoDB Download Center <a href="https://www.mongodb.com/try/download/community?tck=docs_server">Click here</a></li>
+        <li>In the Version dropdown, select the version of MongoDB to download. <strong>-->></strong>
+             In the Platform dropdown, select Windows<strong>-->></strong> 
+            In the Package dropdown, select msi<strong>-->></strong>
+            Click Download.</pre></li>
+            <li><strong>Note: You can refer this official docs <em><a href="https://docs.mongodb.com/guides/server/install/">Click here</a></em></strong></li>
+
+    </ul>
+    <h3>Installation Steps:</h3>
+    <ul>
+        <li>Select Install MongoD as a Service</li>
+        <li>Run the service as Network Service user <strong> (Default)</strong></li>
+        <li>Leave as it as Default</li>
+        <li>Make sure to select Install MongoDB Compass (Default).</li>
+        <li>next --> next  --> next  --> Install --> yes </li>
+    </ul>
+
+    <h3>To start using Compass</h3>
+    <ul>
+        <li>Go to their location where mongodb installed <strong>eg : C:\Program Files\MongoDB\Server\5.0\bin</strong></li>
+        <li>Copy folder location till bin folder <i> by clicking on top folder box and copy it </i> <strong>Eg : C:\Program Files\MongoDB\Server\5.0\bin</strong></li>
+        <li>Search Edit the system environment variable in windows search bar</li>
+        <li>Open system variable <strong>--></strong>Click on Environment variable <strong>--></strong> Click on path of System variable <strong>--></strong> Edit <strong>--></strong>New <strong>--></strong>Paste that location <strong>--></strong>Ok<strong>--></strong>Apply <strong>--></strong>Ok</li>
+    </ul> <pre>
+                                              or
+    </pre>
+        <li>If you donont find environment variable there Here  is second way to find System Variable</li>
+        <ul>
+            <li>Go to System <strong>--></strong> Advanced System setting <strong>--></strong>Environment  variable <strong>and follow similar steps that are mentioned above.</strong> </li>
+        </ul>
+
+        <h3>Benefits to add bin folder location in path of Environment Variable</h3>
+        <li>To get access of all executiable in powershell from anywhere</li>
+        <li>We don't have to open mongo everytime </li>
+
+        <h3>To Check Mongodb successfully installed </h3>
+        <li>Type <strong>mongo</strong> in windows powershell</li>
+
+        <h3>MongoDb Compass and its Benefits:</h3>
+        <li>MongoDB Compass is a powerful GUI for querying, aggregating, and analyzing your MongoDB data in a visual environment.</li>
+        <li>Compass. The GUI for MongoDB. </li>
+          <li>Intuitive UI</li>
+          <li>Aggregation builder</li>
+          <li> Schema mapping</li>
+          <li>Metadata analysis</li>
+          <li>Embedded MongoShell</li>
+
+          <h3>To Connect</h3>
+          <li> Open MongoDbCompass   </li>
+          <li>Click on Fill in connection fields individually <em>if connection string is not available</em></li>
+          <li>Leaveas it is Default</li>
+          <li> Click on Connect</li>
+
+          <h3>To Create Database</h3>
+          <ul > 
+              <li>Click on Create database<strong>--></strong > Give Database and Collection Name <strong>--></strong> Click on Create database </li>
+              <li><strong>To Create collection</strong> Click on which database that you made <strong>--></strong >Click on Create Collection<strong>--></strong >Give name and Create.</li>
+                <li><strong>to Insert Data</strong>Click on that collection in which you want to insert data<strong>--></strong > Click on Add data <strong>--></strong >Insert Document <strong>--></strong > fill and insert that's it.</li>       
+            </ul>
+           
+            <li><strong>Note : <em>We can do all CRUD functions i.e Create , Read , Update , Delete in Document</em></strong></li>
+            <li><strong><em> Here we give random key value : pair , thats the major advantage of Mongodb Database which is not availablein other database</em></strong></li>
+
+            <h3>We'll see all command related to database <em>although we perform all action via GUI of MongoDB But do all in window powershell by issuing commands : </em></h3>
+
+            <hr>
+            COMMAND RELATED TO COLLECTIONS
+
+show collections = To view all collections
+
+db.createCollection('name') => To create new collection
+
+db.collectionName.drop() => To delete collection
+
+            
+            <h3>Commands Related to Database :</h3>
+            <ul>
+                <li><strong>show dbs :</strong> to view all Database</li>
+                <li><strong>use databaseName :</strong> to create a new Database</li>
+                <li><strong>use databaseName :</strong> switch to particular Database name</li>
+                <li><strong>db :</strong> to view current Database</li>
+                <li><strong> db.dropDatabase()  :</strong> to Delete Database</li>
+            </ul>
+
+            
+            <h3>Commands Related to Collections :</h3>
+            <ul>
+                <li><strong>show collections :</strong> to view all collections</li>
+                <li><strong>db.createCollection('name') :</strong> to create a new collection</li>
+                <li><strong>db.collectionName.drop() :</strong> to delete collection</li>
+            
+            </ul>
+            db.comments.find() => To see all inserted rows in a COLLECTIONS
+            db.comments.find().pretty() =>>  To see all inserted rows in a COLLECTIONS(beautified)
+            <h3>Commands Related to Rows :</h3>
+            <ul>
+                <li><strong>db.collectionName.insert({   
+                    'name' : 'manish', 
+                    'age' : 20, 
+                    'address' : 'patna'
+                 }) :</strong> to inset in a row</li>
+                <li><strong>db.comments.insertMany([{   
+                    'name' : 'manish',
+                    'age' : 20,
+                    'address':'sheohar'
+                },
+                {   
+                    'name' : 'abhijeet',
+                    'age' : 7620,
+                    'address':'patna'
+                },
+                ]) :</strong> to Insert Many Rows</li>
+
+                <li><strong>db.comments.find() :</strong>to see all inserted rows of a collection</li>
+                <li><strong>db.comments.find().pretty() :</strong>to see all inserted rows in a collections in beautified</li>
+            
+            </ul>
+</body>
+</html>
