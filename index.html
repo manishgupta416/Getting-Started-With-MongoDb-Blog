@@ -125,15 +125,7 @@
             <h3>We'll see all command related to database <em>although we perform all action via GUI of MongoDB But do all in window powershell by issuing commands : </em></h3>
 
             <hr>
-            COMMAND RELATED TO COLLECTIONS
-
-show collections = To view all collections
-
-db.createCollection('name') => To create new collection
-
-db.collectionName.drop() => To delete collection
-
-            
+        <h2><em>Note: </em>  To use commands first type : <em>mongo</em>  in windows powershell to start/connect with mongod server</h2>    
             <h3>Commands Related to Database :</h3>
             <ul>
                 <li><strong>show dbs :</strong> to view all Database</li>
@@ -172,9 +164,56 @@ db.collectionName.drop() => To delete collection
                 },
                 ]) :</strong> to Insert Many Rows</li>
 
-                <li><strong>db.comments.find() :</strong>to see all inserted rows of a collection</li>
-                <li><strong>db.comments.find().pretty() :</strong>to see all inserted rows in a collections in beautified</li>
-            
+                <li><strong>db.collectionName.find() :</strong>to see all inserted rows of a collection</li>
+                <li><strong>db.collectionName.find().pretty() :</strong>to see all inserted rows in a collections in beautified</li>    
+                <li><strong> db.collectionName.find().pretty().limit(num) </strong> to limit the number of rows shown in output</li>
+                <li><strong>db.collectionName.find({'address':'patna'})</strong> to search in a database</li>
             </ul>
+      
+             <h3>Some more useful commands are :</h3>
+             <ul>
+                 <li><strong>db.collectionName.find().count()</strong> to count number of rows in collection</li>
+                 <li><strong>db.collectionName.find({'name':'manish'}).count() </strong> it count on basic of filter . Here examples<em>({'name':'manish'})</em></li>
+                 <li><strong>db.collectionName.findOne({name : 'manish'})</strong> to find first row which matches with the object</li>
+                 <li><strong>db.collectionName.find().sort({age:1}).pretty()</strong> To sort in a ascending Order</li>
+                 <li><strong>db.collectionName.find().sort({age:-1}).pretty()</strong> TO sort in a descending Order</li>
+                 <li><strong> db.collectionName.remove({name:'manoj'})</strong> To delete row on basis of given object</li>
+             </ul>
+             
+             <h3>Most Commonly Used Operators</h3>
+             <ul>
+                 <li><strong></strong>Increment Operator</li>
+                 <pre>db.collectionName.update({name : 'mayank'},
+                    { $inc:{
+                         age : 30
+                        }})</pre>
+             </ul>
+             <ul>
+                 <li><strong></strong>Rename Operator on basis of given filter</li>
+                 <pre>db.collectionName.update({name : 'abhijeet'},{
+                    $rename:{
+                        age : 'you are a kid'
+                    }
+                })</pre>
+             </ul>
+             <ul>
+                 <li><strong></strong>Rename all Operator</li>
+                 <pre>db.comments.update({
+                    $rename:{
+                        age : 'you are a kid'
+                    }
+                })</pre>
+             </ul>
+             <ul>
+                 <li><strong></strong>Less Than Operator</li>
+                 <pre>db.comments.find({age :{$lt :30}})</pre>
+             </ul>
+             <ul>
+                 <li><strong></strong>Greater Than Operator : </li>
+                 <pre> db.comments.find({age :{$gt :30}})</pre>
+             </ul>
+             
+             
+             
 </body>
 </html>
